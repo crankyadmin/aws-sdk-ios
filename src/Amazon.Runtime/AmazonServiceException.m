@@ -25,6 +25,7 @@
 /** Generic excpetion type for AWS Service Errors. */
 @implementation AmazonServiceException
 
+
 +(id)exceptionWithMessage:(NSString *)theMessage
 {
     AmazonServiceException *e = [[[self class] alloc] initWithName:@"AmazonServiceException"
@@ -62,7 +63,7 @@
     self = [super initWithName:name reason:reason userInfo:userInfo];
     if(self)
     {
-        _statusCode = 0;
+        self.statusCode = 0;
     }
     
     return self;
@@ -84,18 +85,18 @@
 
 -(NSMutableDictionary *)additionalFields
 {
-    if (nil == _additionalFields) {
-        _additionalFields = [[NSMutableDictionary alloc] initWithCapacity:1];
+    if (nil == self.additionalFields) {
+        self.additionalFields = [[NSMutableDictionary alloc] initWithCapacity:1];
     }
-    return _additionalFields;
+    return self.additionalFields;
 }
 
 -(void)dealloc
 {
-    [_requestId release];
-    [_errorCode release];
-    [_serviceName release];
-    [_additionalFields release];
+    [self.requestId release];
+    [self.errorCode release];
+    [self.serviceName release];
+    [self.additionalFields release];
 
     [super dealloc];
 }

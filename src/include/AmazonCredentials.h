@@ -17,6 +17,9 @@
 
 @interface AmazonCredentials : NSObject <NSCopying>
 {
+    NSString *accessKey;
+    NSString *secretKey;
+    NSString *securityToken;
 }
 
 /** Inits the credential with the access key and the secret key.

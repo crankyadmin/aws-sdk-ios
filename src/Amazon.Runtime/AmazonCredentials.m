@@ -17,9 +17,9 @@
 
 @implementation AmazonCredentials
 
-@synthesize accessKey = _accessKey;
-@synthesize secretKey = _secretKey;
-@synthesize securityToken = _securityToken;
+@synthesize accessKey;
+@synthesize secretKey;
+@synthesize securityToken;
 
 -(id)initWithAccessKey:(NSString *)theAccessKey withSecretKey:(NSString *)theSecretKey
 {
@@ -52,9 +52,9 @@
 
 -(void)dealloc
 {
-    [_accessKey release];
-    [_secretKey release];
-    [_securityToken release];
+    [self.accessKey release];
+    [self.secretKey release];
+    [self.securityToken release];
     
     [super dealloc];
 }

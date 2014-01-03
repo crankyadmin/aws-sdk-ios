@@ -39,6 +39,7 @@ extern NSString *const AWSClockSkewError;
     BOOL                 didTimeout;
     BOOL                 isAsyncCall;
     Class                unmarshallerDelegate;
+    BOOL                 hasClockSkewError;
     NSError *error;
 
     AmazonServiceRequest *request;

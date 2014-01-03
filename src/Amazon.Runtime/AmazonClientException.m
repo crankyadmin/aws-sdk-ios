@@ -17,6 +17,7 @@
 
 @implementation AmazonClientException
 
+
 +(id)exceptionWithMessage:(NSString *)theMessage
 {
     AmazonClientException *e = [[[self class] alloc] initWithName:@"AmazonClientException" 
@@ -51,8 +52,8 @@
 
 -(void)dealloc
 {
-    [_message release];
-    [_error release];
+    [self.message release];
+    [self.error release];
 
     [super dealloc];
 }

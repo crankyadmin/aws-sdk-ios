@@ -14,7 +14,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+//#import <Cocoa/Cocoa.h>
 
 #define AWS_SDK_VERSION              @"1.7.1"
 #define AWS_SDK_USER_AGENT_FORMAT    @"aws-sdk-iOS/%@ %@/%@ %@"

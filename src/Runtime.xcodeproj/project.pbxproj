@@ -47,11 +47,11 @@
 		38EFEA9E161F542D0069348B /* AmazonURLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 38EFEA85161F542C0069348B /* AmazonURLRequest.h */; };
 		38EFEA9F161F542D0069348B /* AmazonValueUnmarshaller.h in Headers */ = {isa = PBXBuildFile; fileRef = 38EFEA86161F542C0069348B /* AmazonValueUnmarshaller.h */; };
 		38EFEAA0161F542D0069348B /* AmazonWebServiceClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 38EFEA87161F542C0069348B /* AmazonWebServiceClient.h */; };
+		4A128C7918771F9000354ED2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A128C7818771F9000354ED2 /* Cocoa.framework */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		CE17329816D8132A00DEC510 /* SBJson.h in Headers */ = {isa = PBXBuildFile; fileRef = CE17329716D8132A00DEC510 /* SBJson.h */; };
 		CE2CDC0A1703AE0F0013DE5F /* AWSRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2CDC091703AE0F0013DE5F /* AWSRuntime.h */; };
 		CE39A67D15B73D890008DBEA /* AmazonErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39A67C15B73D890008DBEA /* AmazonErrorHandler.m */; };
-		CE96C1B7158BD58A0084D3CB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE96C1A9158BC2A70084D3CB /* MobileCoreServices.framework */; };
 		CEEDD5D214FC0EF6009BA65E /* AmazonAbstractWebServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEDD5D114FC0EF6009BA65E /* AmazonAbstractWebServiceClient.m */; };
 		D01158E313395C4F00E35D3D /* AmazonBoolValueUnmarshaller.m in Sources */ = {isa = PBXBuildFile; fileRef = D01158E213395C4F00E35D3D /* AmazonBoolValueUnmarshaller.m */; };
 		D01926E012D69A8D0045B3F1 /* AmazonEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = D01926DF12D69A8D0045B3F1 /* AmazonEndpoints.m */; };
@@ -133,6 +133,7 @@
 		38EFEA85161F542C0069348B /* AmazonURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonURLRequest.h; sourceTree = "<group>"; };
 		38EFEA86161F542C0069348B /* AmazonValueUnmarshaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonValueUnmarshaller.h; sourceTree = "<group>"; };
 		38EFEA87161F542C0069348B /* AmazonWebServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonWebServiceClient.h; sourceTree = "<group>"; };
+		4A128C7818771F9000354ED2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA747D9E0F9514B9006C5449 /* Runtime_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runtime_Prefix.pch; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE17329716D8132A00DEC510 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -185,7 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE96C1B7158BD58A0084D3CB /* MobileCoreServices.framework in Frameworks */,
+				4A128C7918771F9000354ED2 /* Cocoa.framework in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +218,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A128C7818771F9000354ED2 /* Cocoa.framework */,
 				CE96C1A9158BC2A70084D3CB /* MobileCoreServices.framework */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
 			);
@@ -560,7 +562,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Runtime;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -590,7 +592,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Runtime;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -611,7 +613,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -630,7 +632,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -650,7 +652,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Debug64;
 		};
@@ -676,7 +678,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Runtime;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug64;
@@ -707,7 +709,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Release64;
 		};
@@ -736,7 +738,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Runtime;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
 			name = Release64;

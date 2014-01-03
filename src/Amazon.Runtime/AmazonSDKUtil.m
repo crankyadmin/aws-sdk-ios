@@ -52,8 +52,8 @@ static NSTimeInterval _clockskew = 0.0;
 
 +(NSString *)userAgentString
 {
-    NSString *sn  = [[[UIDevice currentDevice] systemName] stringByReplacingOccurrencesOfString:@" " withString:@"-"];
-    NSString *sv  = [[UIDevice currentDevice] systemVersion];
+    NSString *sn  = @"AWS SDK OSX FRAMEWORK";
+    NSString *sv  = @"FIX YOUR API!";
     NSString *loc = [[NSLocale currentLocale] localeIdentifier];
     NSString *ua  = [NSString stringWithFormat:AWS_SDK_USER_AGENT_FORMAT, AWS_SDK_VERSION, sn, sv, loc];
 

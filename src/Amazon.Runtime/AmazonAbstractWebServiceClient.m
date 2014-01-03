@@ -20,16 +20,16 @@
 
 @implementation AmazonAbstractWebServiceClient
 
-@synthesize userAgent = _userAgent;
+//@synthesize userAgent;
 
 - (id)init
 {
     if (self = [super init]) {
-        _maxRetries = 5;
-        _timeout = 240;
-        _connectionTimeout = 0;
-        _delay = 0.2;
-        _userAgent = [[AmazonSDKUtil userAgentString] retain];
+        self.maxRetries = 5;
+        self.timeout = 240;
+        self.connectionTimeout = 0;
+        self.delay = 0.2;
+        self.userAgent = [[AmazonSDKUtil userAgentString] retain];
     }
 
     return self;
@@ -49,7 +49,7 @@
 -(id)initWithCredentialsProvider:(id<AmazonCredentialsProvider>)provider
 {
     if (self = [self init]) {
-        _provider = [provider retain];
+        self.provider = [provider retain];
     }
 
     return self;
@@ -86,7 +86,7 @@
         generatedRequest.endpoint = [self endpoint];
     }
     if (nil == generatedRequest.credentials) {
-        [generatedRequest setCredentials:[_provider credentials]];
+        [generatedRequest setCredentials:[self.provider credentials]];
     }
 
     NSMutableURLRequest *urlRequest = [generatedRequest configureURLRequest];
@@ -222,7 +222,7 @@
 
             // If the service returned error indicating session expired,
             // force refresh on provider and retry
-            [_provider refresh];
+            [self.provider refresh];
             return YES;
         }
 
@@ -253,20 +253,20 @@
 
 -(void)setUserAgent:(NSString *)newUserAgent
 {
-    [_userAgent autorelease];
-    _userAgent = [[NSString stringWithFormat:@"%@, %@", newUserAgent, [AmazonSDKUtil userAgentString]] retain];
+    [self.userAgent autorelease];
+    self.userAgent = [[NSString stringWithFormat:@"%@, %@", newUserAgent, [AmazonSDKUtil userAgentString]] retain];
 }
 
 -(NSString *)userAgent
 {
     if([AmazonErrorHandler throwsExceptions] == YES)
     {
-        return _userAgent;
+        return self.userAgent;
     }
     else
     {
         // When NSError error handling is enabled, add NE at the end of userAgent.
-        return [NSString stringWithFormat:@"%@ NE", _userAgent];
+        return [NSString stringWithFormat:@"%@ NE", self.userAgent];
     }
 }
 
@@ -424,9 +424,9 @@
 
 -(void)dealloc
 {
-    [_provider release];
-    [_endpoint release];
-    [_userAgent release];
+    [self.provider release];
+    [self.endpoint release];
+    [self.userAgent release];
     
     [super dealloc];
 }
